@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module getter.output</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="getter.html" class="white">getter</a>.output</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/getter/output.py">/Users/paularoche/Desktop/claimer/claimer_mOs/getter/output.py</a></td></tr></table>
+    <p><span class="code">Este&nbsp;módulo&nbsp;contiene&nbsp;las&nbsp;funciones&nbsp;que&nbsp;obtienen&nbsp;los&nbsp;datos&nbsp;necesarios&nbsp;para&nbsp;clasificar&nbsp;los&nbsp;<br>
+registros&nbsp;y&nbsp;las&nbsp;funciones&nbsp;que&nbsp;guardan&nbsp;una&nbsp;copia&nbsp;temporal&nbsp;de&nbsp;los&nbsp;resultados&nbsp;obtenidos</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="xlsxwriter.app.html">xlsxwriter.app</a><br>
+<a href="xlsxwriter.chart.html">xlsxwriter.chart</a><br>
+<a href="xlsxwriter.chart_area.html">xlsxwriter.chart_area</a><br>
+<a href="xlsxwriter.chart_bar.html">xlsxwriter.chart_bar</a><br>
+<a href="xlsxwriter.chart_column.html">xlsxwriter.chart_column</a><br>
+<a href="xlsxwriter.chart_doughnut.html">xlsxwriter.chart_doughnut</a><br>
+<a href="xlsxwriter.chart_line.html">xlsxwriter.chart_line</a><br>
+<a href="xlsxwriter.chart_pie.html">xlsxwriter.chart_pie</a><br>
+<a href="xlsxwriter.chart_radar.html">xlsxwriter.chart_radar</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.chart_scatter.html">xlsxwriter.chart_scatter</a><br>
+<a href="xlsxwriter.chart_stock.html">xlsxwriter.chart_stock</a><br>
+<a href="xlsxwriter.chartsheet.html">xlsxwriter.chartsheet</a><br>
+<a href="xlsxwriter.comments.html">xlsxwriter.comments</a><br>
+<a href="xlsxwriter.contenttypes.html">xlsxwriter.contenttypes</a><br>
+<a href="xlsxwriter.core.html">xlsxwriter.core</a><br>
+<a href="xlsxwriter.custom.html">xlsxwriter.custom</a><br>
+<a href="xlsxwriter.drawing.html">xlsxwriter.drawing</a><br>
+<a href="xlsxwriter.exceptions.html">xlsxwriter.exceptions</a><br>
+</td><td class="multicolumn"><a href="tkinter.filedialog.html">tkinter.filedialog</a><br>
+<a href="xlsxwriter.format.html">xlsxwriter.format</a><br>
+<a href="tkinter.messagebox.html">tkinter.messagebox</a><br>
+<a href="xlsxwriter.metadata.html">xlsxwriter.metadata</a><br>
+<a href="xlsxwriter.packager.html">xlsxwriter.packager</a><br>
+<a href="pandas.html">pandas</a><br>
+<a href="re.html">re</a><br>
+<a href="xlsxwriter.relationships.html">xlsxwriter.relationships</a><br>
+<a href="xlsxwriter.shape.html">xlsxwriter.shape</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.sharedstrings.html">xlsxwriter.sharedstrings</a><br>
+<a href="xlsxwriter.styles.html">xlsxwriter.styles</a><br>
+<a href="xlsxwriter.table.html">xlsxwriter.table</a><br>
+<a href="xlsxwriter.theme.html">xlsxwriter.theme</a><br>
+<a href="xlsxwriter.utility.html">xlsxwriter.utility</a><br>
+<a href="xlsxwriter.vml.html">xlsxwriter.vml</a><br>
+<a href="xlsxwriter.workbook.html">xlsxwriter.workbook</a><br>
+<a href="xlsxwriter.worksheet.html">xlsxwriter.worksheet</a><br>
+<a href="xlsxwriter.xmlwriter.html">xlsxwriter.xmlwriter</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-get_desv"><strong>get_desv</strong></a>(df, anomaly)</dt><dd><span class="code">Ajusta&nbsp;los&nbsp;indices&nbsp;del&nbsp;data&nbsp;frama&nbsp;tras&nbsp;una&nbsp;separación&nbsp;y&nbsp;calcula&nbsp;la&nbsp;diferencia&nbsp;<br>
+entre&nbsp;la&nbsp;comisión&nbsp;que&nbsp;se&nbsp;debería&nbsp;haber&nbsp;cobrado&nbsp;de&nbsp;acuerdo&nbsp;a&nbsp;las&nbsp;condiciones&nbsp;<br>
+del&nbsp;producto&nbsp;y&nbsp;la&nbsp;póliza&nbsp;y&nbsp;la&nbsp;que&nbsp;se&nbsp;ha&nbsp;cobrado.<br>
+Toma&nbsp;como&nbsp;parametros&nbsp;de&nbsp;entrada:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;data&nbsp;frame&nbsp;de&nbsp;recibos&nbsp;a&nbsp;procesar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;anomaly:&nbsp;este&nbsp;parámetro&nbsp;indica&nbsp;si&nbsp;las&nbsp;pólizas&nbsp;tienen&nbsp;una&nbsp;casúistica&nbsp;especial.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Su&nbsp;valor&nbsp;es&nbsp;0,&nbsp;si&nbsp;la&nbsp;póliza&nbsp;no&nbsp;presenta&nbsp;anomalías;&nbsp;1,&nbsp;si&nbsp;se&nbsp;trata&nbsp;de&nbsp;una&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;póliza&nbsp;emitida&nbsp;con&nbsp;clave&nbsp;cosesa&nbsp;y&nbsp;cuyo&nbsp;recibo&nbsp;ya&nbsp;fue&nbsp;reclamado;&nbsp;2,&nbsp;si&nbsp;se&nbsp;ha&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pactado&nbsp;una&nbsp;comisión&nbsp;reducida&nbsp;en&nbsp;esa&nbsp;póliza</span></dd></dl>
+ <dl><dt><a name="-get_dif"><strong>get_dif</strong></a>(df_recibos, anomaly)</dt><dd><span class="code">Calcula&nbsp;la&nbsp;diferencia&nbsp;<br>
+entre&nbsp;la&nbsp;comisión&nbsp;que&nbsp;se&nbsp;debería&nbsp;haber&nbsp;cobrado&nbsp;de&nbsp;acuerdo&nbsp;a&nbsp;las&nbsp;condiciones&nbsp;<br>
+del&nbsp;producto&nbsp;y&nbsp;la&nbsp;póliza&nbsp;y&nbsp;la&nbsp;que&nbsp;se&nbsp;ha&nbsp;cobrado.<br>
+Toma&nbsp;como&nbsp;parametros&nbsp;de&nbsp;entrada:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;data&nbsp;frame&nbsp;de&nbsp;recibos&nbsp;a&nbsp;procesar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;anomaly:&nbsp;este&nbsp;parámetro&nbsp;indica&nbsp;si&nbsp;las&nbsp;pólizas&nbsp;tienen&nbsp;una&nbsp;casúistica&nbsp;especial.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Su&nbsp;valor&nbsp;es&nbsp;0,&nbsp;si&nbsp;la&nbsp;póliza&nbsp;no&nbsp;presenta&nbsp;anomalías;&nbsp;1,&nbsp;si&nbsp;se&nbsp;trata&nbsp;de&nbsp;una&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;póliza&nbsp;emitida&nbsp;con&nbsp;clave&nbsp;cosesa&nbsp;y&nbsp;cuyo&nbsp;recibo&nbsp;ya&nbsp;fue&nbsp;reclamado;&nbsp;2,&nbsp;si&nbsp;se&nbsp;ha&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pactado&nbsp;una&nbsp;comisión&nbsp;reducida&nbsp;en&nbsp;esa&nbsp;póliza</span></dd></dl>
+ <dl><dt><a name="-save_est"><strong>save_est</strong></a>(df_data)</dt><dd><span class="code">Guarda&nbsp;una&nbsp;copia&nbsp;del&nbsp;archivo&nbsp;excel&nbsp;'Estadistica'&nbsp;en&nbsp;la&nbsp;ruta&nbsp;que&nbsp;el&nbsp;usuario&nbsp;indica</span></dd></dl>
+ <dl><dt><a name="-save_r_1"><strong>save_r_1</strong></a>(dfs)</dt><dd><span class="code">Guarda&nbsp;una&nbsp;copia&nbsp;del&nbsp;archivo&nbsp;excel&nbsp;'Resultado'&nbsp;en&nbsp;la&nbsp;ruta&nbsp;que&nbsp;el&nbsp;usuario&nbsp;indica</span></dd></dl>
+ <dl><dt><a name="-save_r_2"><strong>save_r_2</strong></a>(dfs)</dt><dd><span class="code">Guarda&nbsp;una&nbsp;copia&nbsp;del&nbsp;archivo&nbsp;excel&nbsp;'Correctos'&nbsp;en&nbsp;la&nbsp;ruta&nbsp;que&nbsp;el&nbsp;usuario&nbsp;indica</span></dd></dl>
+</td></tr></table>
+</body></html>

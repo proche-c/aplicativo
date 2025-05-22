@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module getter.input</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="getter.html" class="white">getter</a>.input</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/getter/input.py">/Users/paularoche/Desktop/claimer/claimer_mOs/getter/input.py</a></td></tr></table>
+    <p><span class="code">El&nbsp;módulo&nbsp;input&nbsp;contiene&nbsp;las&nbsp;funciones&nbsp;que&nbsp;modifican&nbsp;el&nbsp;data&nbsp;frame&nbsp;inicial&nbsp;y&nbsp;la&nbsp;función&nbsp;que&nbsp;<br>
+gestiona&nbsp;la&nbsp;creación&nbsp;de&nbsp;los&nbsp;campos&nbsp;necesarios&nbsp;para&nbsp;el&nbsp;procesamiento&nbsp;de&nbsp;los&nbsp;recibos</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-create_df"><strong>create_df</strong></a>(path, header)</dt><dd><span class="code">Crea&nbsp;el&nbsp;DataFrame&nbsp;inicial&nbsp;a&nbsp;partir&nbsp;del&nbsp;archivo&nbsp;excel&nbsp;introducido.<br>
+Los&nbsp;parametros&nbsp;de&nbsp;entrada&nbsp;son:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;path:&nbsp;es&nbsp;la&nbsp;ruta&nbsp;del&nbsp;archivo&nbsp;excel&nbsp;que&nbsp;contiene&nbsp;los&nbsp;datos&nbsp;a&nbsp;cargar&nbsp;en&nbsp;el&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;frame&nbsp;creado.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;header:&nbsp;indica&nbsp;la&nbsp;fila&nbsp;cuyos&nbsp;valores&nbsp;se&nbsp;quieren&nbsp;tomar&nbsp;como&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cabecera&nbsp;del&nbsp;data&nbsp;frame&nbsp;que&nbsp;se&nbsp;crea</span></dd></dl>
+ <dl><dt><a name="-eliminar_columnas"><strong>eliminar_columnas</strong></a>(df)</dt><dd><span class="code">Elimina&nbsp;las&nbsp;columnas&nbsp;sin&nbsp;etiquetar,&nbsp;en&nbsp;este&nbsp;caso,&nbsp;las&nbsp;columnas&nbsp;llamadas&nbsp;<br>
+'Unnamed'&nbsp;que&nbsp;corresponden&nbsp;con&nbsp;la&nbsp;especificación&nbsp;de&nbsp;la&nbsp;moneda&nbsp;utilizada</span></dd></dl>
+ <dl><dt><a name="-fix_index"><strong>fix_index</strong></a>(df)</dt><dd><span class="code">Arregla&nbsp;los&nbsp;indices.&nbsp;Se&nbsp;usa&nbsp;despues&nbsp;de&nbsp;eliminar&nbsp;alguna&nbsp;fila&nbsp;para&nbsp;evitar&nbsp;errores.<br>
+Toma&nbsp;como&nbsp;parámetro&nbsp;el&nbsp;data&nbsp;frame&nbsp;cuyos&nbsp;indices&nbsp;se&nbsp;han&nbsp;de&nbsp;corregir</span></dd></dl>
+ <dl><dt><a name="-get_com"><strong>get_com</strong></a>(df)</dt><dd><span class="code">Añade&nbsp;al&nbsp;dataframe&nbsp;los&nbsp;campos&nbsp;que&nbsp;indican&nbsp;la&nbsp;comision&nbsp;del&nbsp;sexto&nbsp;año,<br>
+la&nbsp;comision&nbsp;que&nbsp;debe&nbsp;aplicarse&nbsp;en&nbsp;porcentaje&nbsp;y&nbsp;la&nbsp;comision&nbsp;teorica<br>
+que&nbsp;se&nbsp;deberia&nbsp;haber&nbsp;cobrado&nbsp;en&nbsp;euros</span></dd></dl>
+</td></tr></table>
+</body></html>

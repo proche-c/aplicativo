@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module data.build</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="data.html" class="white">data</a>.build</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/data/build.py">/Users/paularoche/Desktop/claimer/claimer_mOs/data/build.py</a></td></tr></table>
+    <p><span class="code">Este&nbsp;módulo&nbsp;contiene&nbsp;las&nbsp;funciones&nbsp;que&nbsp;crean&nbsp;el&nbsp;data&nbsp;frame&nbsp;a&nbsp;partir&nbsp;del&nbsp;cual&nbsp;<br>
+se&nbsp;construyen&nbsp;los&nbsp;data&nbsp;frame&nbsp;de&nbsp;datos&nbsp;estadísticos</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-complete_df"><strong>complete_df</strong></a>(list_prod, df)</dt><dd><span class="code">Crea&nbsp;un&nbsp;indice&nbsp;único&nbsp;asociado&nbsp;a&nbsp;cada&nbsp;par&nbsp;de&nbsp;valores&nbsp;producto-compañía&nbsp;y&nbsp;que<br>
+se&nbsp;utiliza&nbsp;como&nbsp;referencia&nbsp;de&nbsp;los&nbsp;cálculos&nbsp;estadísticos&nbsp;con&nbsp;el&nbsp;fín&nbsp;de&nbsp;evitar<br>
+la&nbsp;contaminación&nbsp;de&nbsp;datos&nbsp;que&nbsp;pueda&nbsp;derivarse&nbsp;de&nbsp;posibles&nbsp;duplicidades&nbsp;en&nbsp;los<br>
+nombres&nbsp;de&nbsp;los&nbsp;productos.<br>
+Recibe&nbsp;como&nbsp;parametros&nbsp;una&nbsp;lista&nbsp;de&nbsp;tuplas&nbsp;con&nbsp;los&nbsp;datos&nbsp;relevantes&nbsp;de&nbsp;cada<br>
+producto&nbsp;y&nbsp;el&nbsp;data&nbsp;frame</span></dd></dl>
+ <dl><dt><a name="-create_df_est"><strong>create_df_est</strong></a>(path)</dt><dd><span class="code">Crea&nbsp;el&nbsp;data&nbsp;frame&nbsp;con&nbsp;los&nbsp;datos&nbsp;estadisticos&nbsp;que&nbsp;se&nbsp;han&nbsp;considerado<br>
+relevantes&nbsp;tanto&nbsp;para&nbsp;su&nbsp;visualización&nbsp;como&nbsp;para&nbsp;extraer&nbsp;datos<br>
+de&nbsp;negocio&nbsp;que&nbsp;ayuden&nbsp;a&nbsp;las&nbsp;métricas<br>
+Recibe&nbsp;como&nbsp;parámetro&nbsp;la&nbsp;ruta&nbsp;donde&nbsp;se&nbsp;encuentra&nbsp;el&nbsp;archivo&nbsp;con&nbsp;datos<br>
+a&nbsp;analizar</span></dd></dl>
+ <dl><dt><a name="-create_list_prod"><strong>create_list_prod</strong></a>(df)</dt><dd><span class="code">Crea&nbsp;una&nbsp;lista&nbsp;de&nbsp;tuplas&nbsp;de&nbsp;indice,&nbsp;compañía,&nbsp;producto&nbsp;y&nbsp;comisiones<br>
+Toma&nbsp;los&nbsp;datos&nbsp;del&nbsp;archivo&nbsp;a&nbsp;analizar&nbsp;y&nbsp;elimina&nbsp;los&nbsp;duplicados<br>
+toma&nbsp;como&nbsp;parametro&nbsp;el&nbsp;data&nbsp;frame&nbsp;creado&nbsp;y&nbsp;devuelve&nbsp;una&nbsp;lista&nbsp;de&nbsp;tuplas</span></dd></dl>
+ <dl><dt><a name="-find_indice"><strong>find_indice</strong></a>(list_prod, cia, prod, com1, com2, com3, com4, com5)</dt><dd><span class="code">Relaciona&nbsp;los&nbsp;indices&nbsp;conforme&nbsp;los&nbsp;que&nbsp;se&nbsp;ha&nbsp;hecho&nbsp;el&nbsp;análisis&nbsp;estadístico&nbsp;con&nbsp;<br>
+sus&nbsp;correspondiente&nbsp;tupla&nbsp;en&nbsp;la&nbsp;lista&nbsp;de&nbsp;productos.<br>
+Toma&nbsp;como&nbsp;parámetros:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;list_prod:&nbsp;la&nbsp;lista&nbsp;de&nbsp;productos&nbsp;sin&nbsp;duplicados<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Los&nbsp;datos&nbsp;de&nbsp;producto&nbsp;de&nbsp;cada&nbsp;registro&nbsp;del&nbsp;data&nbsp;frame</span></dd></dl>
+</td></tr></table>
+</body></html>

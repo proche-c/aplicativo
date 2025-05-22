@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module reclamacion.reclamar_all</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="reclamacion.html" class="white">reclamacion</a>.reclamar_all</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/reclamacion/reclamar_all.py">/Users/paularoche/Desktop/claimer/claimer_mOs/reclamacion/reclamar_all.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="xlsxwriter.app.html">xlsxwriter.app</a><br>
+<a href="xlsxwriter.chart.html">xlsxwriter.chart</a><br>
+<a href="xlsxwriter.chart_area.html">xlsxwriter.chart_area</a><br>
+<a href="xlsxwriter.chart_bar.html">xlsxwriter.chart_bar</a><br>
+<a href="xlsxwriter.chart_column.html">xlsxwriter.chart_column</a><br>
+<a href="xlsxwriter.chart_doughnut.html">xlsxwriter.chart_doughnut</a><br>
+<a href="xlsxwriter.chart_line.html">xlsxwriter.chart_line</a><br>
+<a href="xlsxwriter.chart_pie.html">xlsxwriter.chart_pie</a><br>
+<a href="xlsxwriter.chart_radar.html">xlsxwriter.chart_radar</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.chart_scatter.html">xlsxwriter.chart_scatter</a><br>
+<a href="xlsxwriter.chart_stock.html">xlsxwriter.chart_stock</a><br>
+<a href="xlsxwriter.chartsheet.html">xlsxwriter.chartsheet</a><br>
+<a href="xlsxwriter.comments.html">xlsxwriter.comments</a><br>
+<a href="xlsxwriter.contenttypes.html">xlsxwriter.contenttypes</a><br>
+<a href="xlsxwriter.core.html">xlsxwriter.core</a><br>
+<a href="xlsxwriter.custom.html">xlsxwriter.custom</a><br>
+<a href="xlsxwriter.drawing.html">xlsxwriter.drawing</a><br>
+<a href="xlsxwriter.exceptions.html">xlsxwriter.exceptions</a><br>
+</td><td class="multicolumn"><a href="tkinter.filedialog.html">tkinter.filedialog</a><br>
+<a href="xlsxwriter.format.html">xlsxwriter.format</a><br>
+<a href="tkinter.messagebox.html">tkinter.messagebox</a><br>
+<a href="xlsxwriter.metadata.html">xlsxwriter.metadata</a><br>
+<a href="xlsxwriter.packager.html">xlsxwriter.packager</a><br>
+<a href="pandas.html">pandas</a><br>
+<a href="re.html">re</a><br>
+<a href="xlsxwriter.relationships.html">xlsxwriter.relationships</a><br>
+<a href="xlsxwriter.shape.html">xlsxwriter.shape</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.sharedstrings.html">xlsxwriter.sharedstrings</a><br>
+<a href="xlsxwriter.styles.html">xlsxwriter.styles</a><br>
+<a href="xlsxwriter.table.html">xlsxwriter.table</a><br>
+<a href="xlsxwriter.theme.html">xlsxwriter.theme</a><br>
+<a href="xlsxwriter.utility.html">xlsxwriter.utility</a><br>
+<a href="xlsxwriter.vml.html">xlsxwriter.vml</a><br>
+<a href="xlsxwriter.workbook.html">xlsxwriter.workbook</a><br>
+<a href="xlsxwriter.worksheet.html">xlsxwriter.worksheet</a><br>
+<a href="xlsxwriter.xmlwriter.html">xlsxwriter.xmlwriter</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-reclamar_all"><strong>reclamar_all</strong></a>(path, path_cosesa, desv, referencia, root)</dt><dd><span class="code">Función&nbsp;que&nbsp;crea&nbsp;los&nbsp;data&nbsp;frames&nbsp;que&nbsp;contienen&nbsp;la&nbsp;información&nbsp;de&nbsp;los<br>
+recibos&nbsp;procesados,&nbsp;los&nbsp;clasifica,&nbsp;calcula&nbsp;las&nbsp;desvíaciones&nbsp;y&nbsp;determina<br>
+si&nbsp;están&nbsp;correctamente&nbsp;pagados<br>
+Toma&nbsp;como&nbsp;parámetros:<br>
+-&nbsp;path:&nbsp;ruta&nbsp;en&nbsp;la&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;el&nbsp;archivo&nbsp;a&nbsp;procesar<br>
+-&nbsp;path_cosesa:&nbsp;ruta&nbsp;en&nbsp;la&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;el&nbsp;archivo&nbsp;con&nbsp;los&nbsp;recibos&nbsp;reclamados&nbsp;de&nbsp;cosesa<br>
+-&nbsp;desv:&nbsp;desviación&nbsp;a&nbsp;partir&nbsp;de&nbsp;la&nbsp;que&nbsp;se&nbsp;consideran&nbsp;los&nbsp;recibos&nbsp;erróneos<br>
+-&nbsp;referencia:&nbsp;obtiene&nbsp;un&nbsp;parámetro&nbsp;introducido&nbsp;por&nbsp;el&nbsp;usuario&nbsp;y&nbsp;que&nbsp;indica&nbsp;cómo&nbsp;se&nbsp;han&nbsp;de&nbsp;consideran&nbsp;las&nbsp;pólizas&nbsp;por&nbsp;las&nbsp;que&nbsp;se<br>
+percibe&nbsp;una&nbsp;comisión&nbsp;por&nbsp;debajo&nbsp;de&nbsp;la&nbsp;comisión&nbsp;por&nbsp;tabla&nbsp;pero&nbsp;no&nbsp;se&nbsp;tiene&nbsp;la&nbsp;certeza&nbsp;de&nbsp;que&nbsp;s&nbsp;ehaya&nbsp;pactado&nbsp;una<br>
+comisión&nbsp;reducida.<br>
+-&nbsp;Si&nbsp;su&nbsp;valor&nbsp;es&nbsp;1,&nbsp;se&nbsp;considerará&nbsp;que&nbsp;la&nbsp;póliza&nbsp;tiene&nbsp;la&nbsp;comisión&nbsp;que&nbsp;se&nbsp;indica&nbsp;en&nbsp;la&nbsp;tabla&nbsp;de&nbsp;comisiones<br>
+-&nbsp;Si&nbsp;su&nbsp;valor&nbsp;es&nbsp;0,&nbsp;se&nbsp;considerará&nbsp;que&nbsp;las&nbsp;pólizas&nbsp;tienen&nbsp;pactada&nbsp;una&nbsp;comisión&nbsp;reducida&nbsp;y&nbsp;por&nbsp;lo&nbsp;tanto,&nbsp;el&nbsp;<br>
+recibo&nbsp;es&nbsp;correcto</span></dd></dl>
+</td></tr></table>
+</body></html>

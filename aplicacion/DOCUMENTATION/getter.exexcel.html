@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module getter.exexcel</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="getter.html" class="white">getter</a>.exexcel</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/getter/exexcel.py">/Users/paularoche/Desktop/claimer/claimer_mOs/getter/exexcel.py</a></td></tr></table>
+    <p><span class="code">El&nbsp;módulo&nbsp;exexcel&nbsp;contiene&nbsp;las&nbsp;funciones&nbsp;que&nbsp;exportan&nbsp;los&nbsp;data&nbsp;frame&nbsp;<br>
+resultantes&nbsp;del&nbsp;procesamiento&nbsp;de&nbsp;recibos&nbsp;a&nbsp;un&nbsp;archivo&nbsp;excel&nbsp;y&nbsp;le&nbsp;dan&nbsp;formato</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="xlsxwriter.app.html">xlsxwriter.app</a><br>
+<a href="xlsxwriter.chart.html">xlsxwriter.chart</a><br>
+<a href="xlsxwriter.chart_area.html">xlsxwriter.chart_area</a><br>
+<a href="xlsxwriter.chart_bar.html">xlsxwriter.chart_bar</a><br>
+<a href="xlsxwriter.chart_column.html">xlsxwriter.chart_column</a><br>
+<a href="xlsxwriter.chart_doughnut.html">xlsxwriter.chart_doughnut</a><br>
+<a href="xlsxwriter.chart_line.html">xlsxwriter.chart_line</a><br>
+<a href="xlsxwriter.chart_pie.html">xlsxwriter.chart_pie</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.chart_radar.html">xlsxwriter.chart_radar</a><br>
+<a href="xlsxwriter.chart_scatter.html">xlsxwriter.chart_scatter</a><br>
+<a href="xlsxwriter.chart_stock.html">xlsxwriter.chart_stock</a><br>
+<a href="xlsxwriter.chartsheet.html">xlsxwriter.chartsheet</a><br>
+<a href="xlsxwriter.comments.html">xlsxwriter.comments</a><br>
+<a href="xlsxwriter.contenttypes.html">xlsxwriter.contenttypes</a><br>
+<a href="xlsxwriter.core.html">xlsxwriter.core</a><br>
+<a href="xlsxwriter.custom.html">xlsxwriter.custom</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.drawing.html">xlsxwriter.drawing</a><br>
+<a href="xlsxwriter.exceptions.html">xlsxwriter.exceptions</a><br>
+<a href="xlsxwriter.format.html">xlsxwriter.format</a><br>
+<a href="xlsxwriter.metadata.html">xlsxwriter.metadata</a><br>
+<a href="xlsxwriter.packager.html">xlsxwriter.packager</a><br>
+<a href="xlsxwriter.relationships.html">xlsxwriter.relationships</a><br>
+<a href="xlsxwriter.shape.html">xlsxwriter.shape</a><br>
+<a href="xlsxwriter.sharedstrings.html">xlsxwriter.sharedstrings</a><br>
+</td><td class="multicolumn"><a href="xlsxwriter.styles.html">xlsxwriter.styles</a><br>
+<a href="xlsxwriter.table.html">xlsxwriter.table</a><br>
+<a href="xlsxwriter.theme.html">xlsxwriter.theme</a><br>
+<a href="xlsxwriter.utility.html">xlsxwriter.utility</a><br>
+<a href="xlsxwriter.vml.html">xlsxwriter.vml</a><br>
+<a href="xlsxwriter.workbook.html">xlsxwriter.workbook</a><br>
+<a href="xlsxwriter.worksheet.html">xlsxwriter.worksheet</a><br>
+<a href="xlsxwriter.xmlwriter.html">xlsxwriter.xmlwriter</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-exportar_resultado"><strong>exportar_resultado</strong></a>(df, writer, hoja, n)</dt><dd><span class="code">Exporta&nbsp;el&nbsp;data&nbsp;frame&nbsp;que&nbsp;contiene&nbsp;la&nbsp;información&nbsp;de&nbsp;los&nbsp;recibos&nbsp;procesados<br>
+a&nbsp;un&nbsp;archivo&nbsp;excel&nbsp;y&nbsp;le&nbsp;da&nbsp;un&nbsp;formato&nbsp;adecuado&nbsp;para&nbsp;su&nbsp;correcta&nbsp;visualización<br>
+Toma&nbsp;como&nbsp;parametros:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;data&nbsp;frame&nbsp;a&nbsp;exportar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;writer:&nbsp;el&nbsp;objeto&nbsp;del&nbsp;módulo&nbsp;xlsxwriter&nbsp;creado&nbsp;para&nbsp;dar&nbsp;formato&nbsp;a&nbsp;un&nbsp;excel&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;desde&nbsp;Python<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;hoja:&nbsp;una&nbsp;cadena&nbsp;que&nbsp;da&nbsp;nombre&nbsp;a&nbsp;la&nbsp;hoja&nbsp;creada&nbsp;en&nbsp;el&nbsp;archivo&nbsp;excel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;n:&nbsp;toma&nbsp;diferentes&nbsp;valores&nbsp;según&nbsp;la&nbsp;hoja&nbsp;exportada.&nbsp;0&nbsp;para&nbsp;la&nbsp;hoja&nbsp;de&nbsp;resultados<br>
+&nbsp;&nbsp;&nbsp;&nbsp;de&nbsp;'normales'&nbsp;y&nbsp;'fraccionadas';&nbsp;1&nbsp;para&nbsp;'comision&nbsp;reducida';&nbsp;2&nbsp;para&nbsp;recibos&nbsp;'correctos'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;si&nbsp;no&nbsp;se&nbsp;procesan&nbsp;recibos&nbsp;reclamados&nbsp;de&nbsp;cosesa;&nbsp;3&nbsp;para&nbsp;'cosesa';&nbsp;y&nbsp;4&nbsp;para&nbsp;recibos&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'correctos'&nbsp;si&nbsp;se&nbsp;han&nbsp;procesado&nbsp;recibos&nbsp;de&nbsp;cosesa</span></dd></dl>
+ <dl><dt><a name="-fix_columns"><strong>fix_columns</strong></a>(df, col)</dt><dd><span class="code">Elimina&nbsp;las&nbsp;columnas&nbsp;que&nbsp;no&nbsp;se&nbsp;van&nbsp;a&nbsp;exportar&nbsp;al&nbsp;archivo&nbsp;excel<br>
+y&nbsp;renombra<br>
+Toma&nbsp;como&nbsp;parámetros:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;el&nbsp;data&nbsp;frame&nbsp;en&nbsp;el&nbsp;que&nbsp;se&nbsp;eliminan&nbsp;columnas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;col:&nbsp;lista&nbsp;que&nbsp;contiene&nbsp;los&nbsp;nuevos&nbsp;nombres&nbsp;de&nbsp;las&nbsp;columnas</span></dd></dl>
+ <dl><dt><a name="-fix_columns_all"><strong>fix_columns_all</strong></a>(df, col, n)</dt><dd><span class="code">Elimina&nbsp;las&nbsp;columnas&nbsp;que&nbsp;no&nbsp;se&nbsp;van&nbsp;a&nbsp;exportar&nbsp;al&nbsp;archivo&nbsp;excel<br>
+y&nbsp;renombra<br>
+Toma&nbsp;como&nbsp;parámetros:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;el&nbsp;data&nbsp;frame&nbsp;en&nbsp;el&nbsp;que&nbsp;se&nbsp;eliminan&nbsp;columnas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;col:&nbsp;lista&nbsp;que&nbsp;contiene&nbsp;los&nbsp;nuevos&nbsp;nombres&nbsp;de&nbsp;las&nbsp;columnas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;n:&nbsp;su&nbsp;valor&nbsp;es&nbsp;0&nbsp;para&nbsp;el&nbsp;data&nbsp;frame&nbsp;de&nbsp;recibos&nbsp;incorrectos&nbsp;y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;para&nbsp;el&nbsp;de&nbsp;recibos&nbsp;incorrectos</span></dd></dl>
+</td></tr></table>
+</body></html>

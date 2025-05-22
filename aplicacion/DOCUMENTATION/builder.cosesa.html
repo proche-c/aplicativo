@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module builder.cosesa</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="builder.html" class="white">builder</a>.cosesa</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/paularoche/Desktop/claimer/claimer_mOs/builder/cosesa.py">/Users/paularoche/Desktop/claimer/claimer_mOs/builder/cosesa.py</a></td></tr></table>
+    <p><span class="code">El&nbsp;modulo&nbsp;cosesa&nbsp;contiene&nbsp;las&nbsp;funciones&nbsp;necesarias&nbsp;para&nbsp;la&nbsp;creación&nbsp;del&nbsp;dataframe<br>
+que&nbsp;trata&nbsp;las&nbsp;pólizas&nbsp;emitidas&nbsp;en&nbsp;clave&nbsp;cosesa&nbsp;cuyos&nbsp;recibos&nbsp;ya&nbsp;se&nbsp;han&nbsp;reclamado.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-add_is_cosesa"><strong>add_is_cosesa</strong></a>(df, cosesa)</dt><dd><span class="code">Añade&nbsp;la&nbsp;columna&nbsp;que&nbsp;determina&nbsp;si&nbsp;ya&nbsp;se&nbsp;ha&nbsp;reclamado&nbsp;como&nbsp;cosesa&nbsp;y&nbsp;que&nbsp;cantidad<br>
+Crea&nbsp;en&nbsp;el&nbsp;data&nbsp;frame&nbsp;de&nbsp;recibos&nbsp;los&nbsp;campos:<br>
+is_cosesa:&nbsp;1&nbsp;si&nbsp;está&nbsp;reclamado;&nbsp;0&nbsp;si&nbsp;no&nbsp;lo&nbsp;está<br>
+com.&nbsp;cosesa:&nbsp;comisión&nbsp;reclamada&nbsp;si&nbsp;se&nbsp;ha&nbsp;reclamado;&nbsp;0&nbsp;si&nbsp;no</span></dd></dl>
+ <dl><dt><a name="-build_cosesa"><strong>build_cosesa</strong></a>(df, cosesa)</dt><dd><span class="code">Construye&nbsp;una&nbsp;lista&nbsp;anidada&nbsp;con&nbsp;los&nbsp;recibos&nbsp;de&nbsp;cosesa&nbsp;y&nbsp;las&nbsp;com&nbsp;a&nbsp;las&nbsp;que&nbsp;se&nbsp;reclamó..<br>
+Parámetro&nbsp;df:&nbsp;es&nbsp;un&nbsp;data&nbsp;frame&nbsp;que&nbsp;se&nbsp;construye&nbsp;a&nbsp;partir&nbsp;de&nbsp;un&nbsp;hoja&nbsp;excel&nbsp;que<br>
+contiene&nbsp;los&nbsp;datos&nbsp;de&nbsp;los&nbsp;recibos&nbsp;reclamados<br>
+Parámetro&nbsp;cosesa:&nbsp;Es&nbsp;una&nbsp;lista&nbsp;anidada&nbsp;vacía.&nbsp;Es&nbsp;el&nbsp;vslor&nbsp;que&nbsp;se&nbsp;devuelve</span></dd></dl>
+ <dl><dt><a name="-is_cosesa"><strong>is_cosesa</strong></a>(df_num_rec, cosesa)</dt><dd><span class="code">Determina&nbsp;si&nbsp;es&nbsp;un&nbsp;recibo&nbsp;que&nbsp;por&nbsp;ser&nbsp;de&nbsp;cosesa&nbsp;ya&nbsp;se&nbsp;ha&nbsp;reclamado.<br>
+Busca&nbsp;cada&nbsp;recibo&nbsp;del&nbsp;data&nbsp;frame&nbsp;en&nbsp;la&nbsp;lista&nbsp;anidada&nbsp;cosesa<br>
+Valores&nbsp;de&nbsp;retorno:&nbsp;0&nbsp;si&nbsp;no&nbsp;se&nbsp;ha&nbsp;reclamado;&nbsp;comision&nbsp;reclamada&nbsp;si&nbsp;se&nbsp;ha&nbsp;hecho</span></dd></dl>
+</td></tr></table>
+</body></html>
