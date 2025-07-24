@@ -84,6 +84,7 @@ def estadistica(path, root):
         else:
             daf = 1
 
+    os.makedirs("files", exist_ok=True)
     path_est = "files/estadistica.xlsx"
     if daf == 1:
         try:
