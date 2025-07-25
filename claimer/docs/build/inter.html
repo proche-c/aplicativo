@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="Python" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>inter package &#8212; Claimer  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="reclamacion package" href="reclamacion.html" />
+    <link rel="prev" title="getter package" href="getter.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="inter-package">
+<h1>inter package<a class="headerlink" href="#inter-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-inter.interfaz_1">
+<span id="inter-interfaz-1-module"></span><h2>inter.interfaz_1 module<a class="headerlink" href="#module-inter.interfaz_1" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inter.interfaz_1.</span></span><span class="sig-name descname"><span class="pre">Aplication_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<p>Esta clase hereda de frame y su instancia generan el frame con los widgets 
+necesarios para que el usuario introduzca los parámetros de entrada</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1.create_widgets" title="Link to this definition">¶</a></dt>
+<dd><p>Crea los widgets contenidos en el frame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1.get_apdesv">
+<span class="sig-name descname"><span class="pre">get_apdesv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1.get_apdesv" title="Link to this definition">¶</a></dt>
+<dd><p>Obtiene el valor de desviación intrducido por el usuario y que se 
+establecerá el valor de desviación a partir del cual se considera que 
+se ha de regularizar el recibo</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1.get_reference">
+<span class="sig-name descname"><span class="pre">get_reference</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1.get_reference" title="Link to this definition">¶</a></dt>
+<dd><p>Obtiene un parámetro introducido por el usuario y que indica cómo se han 
+de consideran las pólizas por las que se percibe una comisión por debajo 
+de la comisión por tabla pero no se tiene la certeza de que s ehaya pactado 
+una comisión reducida.
+- Si su valor es 1, se considerará que la póliza tiene la comisión que se 
+indica en la tabla de comisiones
+- Si su valor es 0, se considerará que las pólizas tienen pactada una comisión 
+reducida y por lo tanto, el recibo es correcto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1.open_cosesa">
+<span class="sig-name descname"><span class="pre">open_cosesa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1.open_cosesa" title="Link to this definition">¶</a></dt>
+<dd><p>Obtiene la ruta indicada por el usuario en la que se encuentra ubicado el 
+archivo con los recibos reclamados cosesa</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_1.Aplication_1.open_file">
+<span class="sig-name descname"><span class="pre">open_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_1.Aplication_1.open_file" title="Link to this definition">¶</a></dt>
+<dd><p>Otiene la ruta indicada por el usuario en la que se encuentra ubicado el 
+archivo a procesar</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-inter.interfaz_2">
+<span id="inter-interfaz-2-module"></span><h2>inter.interfaz_2 module<a class="headerlink" href="#module-inter.interfaz_2" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="inter.interfaz_2.Aplication_2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inter.interfaz_2.</span></span><span class="sig-name descname"><span class="pre">Aplication_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_2.Aplication_2" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<p>Esta clase hereda de frame y sus instancias generan el frame que expone el resumen de resultados</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="inter.interfaz_2.Aplication_2.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inter.interfaz_2.Aplication_2.create_widgets" title="Link to this definition">¶</a></dt>
+<dd><p>Crea los widgets contenidos en el frame</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-inter">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-inter" title="Link to this heading">¶</a></h2>
+<p>Inter es un paquete que contiene el código de la interfaz gráfica del programa realizada con el módulo Tkinter
+Consta de dos modulos:
+- interfaz_1: define la clase llamada Aplicacion_1, que hereda de Frame y corresponde a la interfaz en la que se introducen 
+los parámetros de entrada del programa.
+- interfaz_2: define la clase llamada Aplicacion_2, que hereda de Frame y corresponde a la interfaz en la que se muestra el 
+resumen de resultados de los datos procesados.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Claimer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">claimer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="claim.html">claim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html">errores package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html">getter package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">inter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html">reclamacion package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">claimer</a><ul>
+      <li>Previous: <a href="getter.html" title="previous chapter">getter package</a></li>
+      <li>Next: <a href="reclamacion.html" title="next chapter">reclamacion package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Paula R. Castro.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/inter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

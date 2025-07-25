@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="Python" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>claimer &#8212; Claimer  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="builder package" href="builder.html" />
+    <link rel="prev" title="Claimer documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="claimer">
+<h1>claimer<a class="headerlink" href="#claimer" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="builder.html">builder package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#module-builder.cosesa">builder.cosesa module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.cosesa.add_is_cosesa"><code class="docutils literal notranslate"><span class="pre">add_is_cosesa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.cosesa.build_cosesa"><code class="docutils literal notranslate"><span class="pre">build_cosesa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.cosesa.is_cosesa"><code class="docutils literal notranslate"><span class="pre">is_cosesa()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#module-builder.fraccionada">builder.fraccionada module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.fraccionada.get_prima_fraccionada"><code class="docutils literal notranslate"><span class="pre">get_prima_fraccionada()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#module-builder.reducida">builder.reducida module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.reducida.get_comision_r"><code class="docutils literal notranslate"><span class="pre">get_comision_r()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#module-builder.regular">builder.regular module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.regular.add_Com6"><code class="docutils literal notranslate"><span class="pre">add_Com6()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.regular.get_comision_a"><code class="docutils literal notranslate"><span class="pre">get_comision_a()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html#builder.regular.get_comision_t"><code class="docutils literal notranslate"><span class="pre">get_comision_t()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html#module-builder">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="claim.html">claim module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">data package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#module-data.build">data.build module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.build.complete_df"><code class="docutils literal notranslate"><span class="pre">complete_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.build.create_df_est"><code class="docutils literal notranslate"><span class="pre">create_df_est()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.build.create_list_prod"><code class="docutils literal notranslate"><span class="pre">create_list_prod()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.build.find_indice"><code class="docutils literal notranslate"><span class="pre">find_indice()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#module-data.estadistica">data.estadistica module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.estadistica.estadistica"><code class="docutils literal notranslate"><span class="pre">estadistica()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#module-data.out">data.out module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.out.exportar_datos"><code class="docutils literal notranslate"><span class="pre">exportar_datos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.out.exportar_estadistica"><code class="docutils literal notranslate"><span class="pre">exportar_estadistica()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html#data.out.get_df_estadistica"><code class="docutils literal notranslate"><span class="pre">get_df_estadistica()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#module-data">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="errores.html">errores package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="errores.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html#module-errores.errores">errores.errores module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="errores.html#errores.errores.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="errores.html#errores.errores.Error.file"><code class="docutils literal notranslate"><span class="pre">Error.file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="errores.html#errores.errores.Error.funct"><code class="docutils literal notranslate"><span class="pre">Error.funct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="errores.html#errores.errores.Error.msg_1"><code class="docutils literal notranslate"><span class="pre">Error.msg_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="errores.html#errores.errores.Error.msg_2"><code class="docutils literal notranslate"><span class="pre">Error.msg_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="errores.html#errores.errores.Error.tipo"><code class="docutils literal notranslate"><span class="pre">Error.tipo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html#module-errores">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getter.html">getter package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getter.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html#module-getter.exexcel">getter.exexcel module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.exexcel.exportar_resultado"><code class="docutils literal notranslate"><span class="pre">exportar_resultado()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.exexcel.fix_columns"><code class="docutils literal notranslate"><span class="pre">fix_columns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.exexcel.fix_columns_all"><code class="docutils literal notranslate"><span class="pre">fix_columns_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html#module-getter.input">getter.input module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.input.create_df"><code class="docutils literal notranslate"><span class="pre">create_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.input.eliminar_columnas"><code class="docutils literal notranslate"><span class="pre">eliminar_columnas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.input.fix_index"><code class="docutils literal notranslate"><span class="pre">fix_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.input.get_com"><code class="docutils literal notranslate"><span class="pre">get_com()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html#module-getter.output">getter.output module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.output.get_desv"><code class="docutils literal notranslate"><span class="pre">get_desv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.output.get_dif"><code class="docutils literal notranslate"><span class="pre">get_dif()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.output.save_est"><code class="docutils literal notranslate"><span class="pre">save_est()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.output.save_r_1"><code class="docutils literal notranslate"><span class="pre">save_r_1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="getter.html#getter.output.save_r_2"><code class="docutils literal notranslate"><span class="pre">save_r_2()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html#module-getter">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inter.html">inter package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inter.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html#module-inter.interfaz_1">inter.interfaz_1 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1"><code class="docutils literal notranslate"><span class="pre">Aplication_1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1.create_widgets"><code class="docutils literal notranslate"><span class="pre">Aplication_1.create_widgets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1.get_apdesv"><code class="docutils literal notranslate"><span class="pre">Aplication_1.get_apdesv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1.get_reference"><code class="docutils literal notranslate"><span class="pre">Aplication_1.get_reference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1.open_cosesa"><code class="docutils literal notranslate"><span class="pre">Aplication_1.open_cosesa()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_1.Aplication_1.open_file"><code class="docutils literal notranslate"><span class="pre">Aplication_1.open_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html#module-inter.interfaz_2">inter.interfaz_2 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="inter.html#inter.interfaz_2.Aplication_2"><code class="docutils literal notranslate"><span class="pre">Aplication_2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="inter.html#inter.interfaz_2.Aplication_2.create_widgets"><code class="docutils literal notranslate"><span class="pre">Aplication_2.create_widgets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html#module-inter">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reclamacion.html">reclamacion package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html#module-reclamacion.reclamar">reclamacion.reclamar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reclamacion.html#reclamacion.reclamar.reclamar"><code class="docutils literal notranslate"><span class="pre">reclamar()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html#module-reclamacion.reclamar_all">reclamacion.reclamar_all module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reclamacion.html#reclamacion.reclamar_all.reclamar_all"><code class="docutils literal notranslate"><span class="pre">reclamar_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html#module-reclamacion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Claimer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">claimer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="claim.html">claim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html">errores package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html">getter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html">inter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html">reclamacion package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Claimer documentation</a></li>
+      <li>Next: <a href="builder.html" title="next chapter">builder package</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Paula R. Castro.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
