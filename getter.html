@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="Python" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>getter package &#8212; Claimer  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="inter package" href="inter.html" />
+    <link rel="prev" title="errores package" href="errores.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="getter-package">
+<h1>getter package<a class="headerlink" href="#getter-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-getter.exexcel">
+<span id="getter-exexcel-module"></span><h2>getter.exexcel module<a class="headerlink" href="#module-getter.exexcel" title="Link to this heading">¶</a></h2>
+<p>El módulo exexcel contiene las funciones que exportan los data frame 
+resultantes del procesamiento de recibos a un archivo excel y le dan formato</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.exexcel.exportar_resultado">
+<span class="sig-prename descclassname"><span class="pre">getter.exexcel.</span></span><span class="sig-name descname"><span class="pre">exportar_resultado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoja</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.exexcel.exportar_resultado" title="Link to this definition">¶</a></dt>
+<dd><p>Exporta el data frame que contiene la información de los recibos procesados
+a un archivo excel y le da un formato adecuado para su correcta visualización
+Toma como parametros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: data frame a exportar</p></li>
+<li><p>writer: el objeto del módulo xlsxwriter creado para dar formato a un excel</p></li>
+</ul>
+<p>desde Python
+- hoja: una cadena que da nombre a la hoja creada en el archivo excel
+- n: toma diferentes valores según la hoja exportada. 0 para la hoja de resultados
+de 'normales' y 'fraccionadas'; 1 para 'comision reducida'; 2 para recibos 'correctos' 
+si no se procesan recibos reclamados de cosesa; 3 para 'cosesa'; y 4 para recibos 
+'correctos' si se han procesado recibos de cosesa</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.exexcel.fix_columns">
+<span class="sig-prename descclassname"><span class="pre">getter.exexcel.</span></span><span class="sig-name descname"><span class="pre">fix_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.exexcel.fix_columns" title="Link to this definition">¶</a></dt>
+<dd><p>Elimina las columnas que no se van a exportar al archivo excel
+y renombra
+Toma como parámetros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: el data frame en el que se eliminan columnas</p></li>
+<li><p>col: lista que contiene los nuevos nombres de las columnas</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.exexcel.fix_columns_all">
+<span class="sig-prename descclassname"><span class="pre">getter.exexcel.</span></span><span class="sig-name descname"><span class="pre">fix_columns_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.exexcel.fix_columns_all" title="Link to this definition">¶</a></dt>
+<dd><p>Elimina las columnas que no se van a exportar al archivo excel
+y renombra
+Toma como parámetros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: el data frame en el que se eliminan columnas</p></li>
+<li><p>col: lista que contiene los nuevos nombres de las columnas</p></li>
+<li><p>n: su valor es 0 para el data frame de recibos incorrectos y</p></li>
+</ul>
+<p>1 para el de recibos incorrectos</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="module-getter.input">
+<span id="getter-input-module"></span><h2>getter.input module<a class="headerlink" href="#module-getter.input" title="Link to this heading">¶</a></h2>
+<p>El módulo input contiene las funciones que modifican el data frame inicial y la función que 
+gestiona la creación de los campos necesarios para el procesamiento de los recibos</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.input.create_df">
+<span class="sig-prename descclassname"><span class="pre">getter.input.</span></span><span class="sig-name descname"><span class="pre">create_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.input.create_df" title="Link to this definition">¶</a></dt>
+<dd><p>Crea el DataFrame inicial a partir del archivo excel introducido.
+Los parametros de entrada son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>path: es la ruta del archivo excel que contiene los datos a cargar en el</p></li>
+</ul>
+<p>data frame creado.
+- header: indica la fila cuyos valores se quieren tomar como 
+cabecera del data frame que se crea</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.input.eliminar_columnas">
+<span class="sig-prename descclassname"><span class="pre">getter.input.</span></span><span class="sig-name descname"><span class="pre">eliminar_columnas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.input.eliminar_columnas" title="Link to this definition">¶</a></dt>
+<dd><p>Elimina las columnas sin etiquetar, en este caso, las columnas llamadas 
+'Unnamed' que corresponden con la especificación de la moneda utilizada</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.input.fix_index">
+<span class="sig-prename descclassname"><span class="pre">getter.input.</span></span><span class="sig-name descname"><span class="pre">fix_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.input.fix_index" title="Link to this definition">¶</a></dt>
+<dd><p>Arregla los indices. Se usa despues de eliminar alguna fila para evitar errores.
+Toma como parámetro el data frame cuyos indices se han de corregir</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.input.get_com">
+<span class="sig-prename descclassname"><span class="pre">getter.input.</span></span><span class="sig-name descname"><span class="pre">get_com</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.input.get_com" title="Link to this definition">¶</a></dt>
+<dd><p>Añade al dataframe los campos que indican la comision del sexto año,
+la comision que debe aplicarse en porcentaje y la comision teorica
+que se deberia haber cobrado en euros</p>
+</dd></dl>
+
+</section>
+<section id="module-getter.output">
+<span id="getter-output-module"></span><h2>getter.output module<a class="headerlink" href="#module-getter.output" title="Link to this heading">¶</a></h2>
+<p>Este módulo contiene las funciones que obtienen los datos necesarios para clasificar los 
+registros y las funciones que guardan una copia temporal de los resultados obtenidos</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.output.get_desv">
+<span class="sig-prename descclassname"><span class="pre">getter.output.</span></span><span class="sig-name descname"><span class="pre">get_desv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.output.get_desv" title="Link to this definition">¶</a></dt>
+<dd><p>Ajusta los indices del data frama tras una separación y calcula la diferencia 
+entre la comisión que se debería haber cobrado de acuerdo a las condiciones 
+del producto y la póliza y la que se ha cobrado.
+Toma como parametros de entrada:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: data frame de recibos a procesar</p></li>
+<li><p>anomaly: este parámetro indica si las pólizas tienen una casúistica especial.</p></li>
+</ul>
+<p>Su valor es 0, si la póliza no presenta anomalías; 1, si se trata de una 
+póliza emitida con clave cosesa y cuyo recibo ya fue reclamado; 2, si se ha 
+pactado una comisión reducida en esa póliza</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.output.get_dif">
+<span class="sig-prename descclassname"><span class="pre">getter.output.</span></span><span class="sig-name descname"><span class="pre">get_dif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_recibos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.output.get_dif" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula la diferencia 
+entre la comisión que se debería haber cobrado de acuerdo a las condiciones 
+del producto y la póliza y la que se ha cobrado.
+Toma como parametros de entrada:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: data frame de recibos a procesar</p></li>
+<li><p>anomaly: este parámetro indica si las pólizas tienen una casúistica especial.</p></li>
+</ul>
+<p>Su valor es 0, si la póliza no presenta anomalías; 1, si se trata de una 
+póliza emitida con clave cosesa y cuyo recibo ya fue reclamado; 2, si se ha 
+pactado una comisión reducida en esa póliza</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.output.save_est">
+<span class="sig-prename descclassname"><span class="pre">getter.output.</span></span><span class="sig-name descname"><span class="pre">save_est</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.output.save_est" title="Link to this definition">¶</a></dt>
+<dd><p>Guarda una copia del archivo excel 'Estadistica' en la ruta que el usuario indica</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.output.save_r_1">
+<span class="sig-prename descclassname"><span class="pre">getter.output.</span></span><span class="sig-name descname"><span class="pre">save_r_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.output.save_r_1" title="Link to this definition">¶</a></dt>
+<dd><p>Guarda una copia del archivo excel 'Resultado' en la ruta que el usuario indica</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getter.output.save_r_2">
+<span class="sig-prename descclassname"><span class="pre">getter.output.</span></span><span class="sig-name descname"><span class="pre">save_r_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getter.output.save_r_2" title="Link to this definition">¶</a></dt>
+<dd><p>Guarda una copia del archivo excel 'Correctos' en la ruta que el usuario indica</p>
+</dd></dl>
+
+</section>
+<section id="module-getter">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-getter" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>Getter es un paquete que se encarga de procesar los datos de entrada y construior los datos datos de salida</dt><dd><p>y otros objetos necesario para el cálculo de las desviacionesa partir de ficheros excel.</p>
+</dd>
+</dl>
+<p>Contiene las funciones que calculan los campos que se muestran en los data frame de salida
+Consta de tres modulos:
+- input: conjunto de funciones que modifican el data frame inicial y la función que gestiona la creación de los</p>
+<blockquote>
+<div><p>campos necesarios para el procesamiento de los recibos.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>output: conjunto de funciones necesarias que obtienen los datos necesarios para clasificar los registros y </dt><dd><p>las funciones que guardan una copia temporal de los resultados obtenidos</p>
+</dd>
+</dl>
+</li>
+<li><p>exexcel: conjunto de funciones que exportan el data frame a un archivo excel y le dan formato</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Claimer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">claimer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="claim.html">claim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html">errores package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">getter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html">inter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html">reclamacion package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">claimer</a><ul>
+      <li>Previous: <a href="errores.html" title="previous chapter">errores package</a></li>
+      <li>Next: <a href="inter.html" title="next chapter">inter package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Paula R. Castro.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/getter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="Python" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>data package &#8212; Claimer  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="errores package" href="errores.html" />
+    <link rel="prev" title="claim module" href="claim.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="data-package">
+<h1>data package<a class="headerlink" href="#data-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-data.build">
+<span id="data-build-module"></span><h2>data.build module<a class="headerlink" href="#module-data.build" title="Link to this heading">¶</a></h2>
+<p>Este módulo contiene las funciones que crean el data frame a partir del cual 
+se construyen los data frame de datos estadísticos</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="data.build.complete_df">
+<span class="sig-prename descclassname"><span class="pre">data.build.</span></span><span class="sig-name descname"><span class="pre">complete_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_prod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.build.complete_df" title="Link to this definition">¶</a></dt>
+<dd><p>Crea un indice único asociado a cada par de valores producto-compañía y que
+se utiliza como referencia de los cálculos estadísticos con el fín de evitar
+la contaminación de datos que pueda derivarse de posibles duplicidades en los
+nombres de los productos.
+Recibe como parametros una lista de tuplas con los datos relevantes de cada
+producto y el data frame</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.build.create_df_est">
+<span class="sig-prename descclassname"><span class="pre">data.build.</span></span><span class="sig-name descname"><span class="pre">create_df_est</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.build.create_df_est" title="Link to this definition">¶</a></dt>
+<dd><p>Crea el data frame con los datos estadisticos que se han considerado
+relevantes tanto para su visualización como para extraer datos
+de negocio que ayuden a las métricas
+Recibe como parámetro la ruta donde se encuentra el archivo con datos
+a analizar</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.build.create_list_prod">
+<span class="sig-prename descclassname"><span class="pre">data.build.</span></span><span class="sig-name descname"><span class="pre">create_list_prod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.build.create_list_prod" title="Link to this definition">¶</a></dt>
+<dd><p>Crea una lista de tuplas de indice, compañía, producto y comisiones
+Toma los datos del archivo a analizar y elimina los duplicados
+toma como parametro el data frame creado y devuelve una lista de tuplas</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.build.find_indice">
+<span class="sig-prename descclassname"><span class="pre">data.build.</span></span><span class="sig-name descname"><span class="pre">find_indice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_prod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cia</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.build.find_indice" title="Link to this definition">¶</a></dt>
+<dd><p>Relaciona los indices conforme los que se ha hecho el análisis estadístico con 
+sus correspondiente tupla en la lista de productos.
+Toma como parámetros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>list_prod: la lista de productos sin duplicados</p></li>
+<li><p>Los datos de producto de cada registro del data frame</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="module-data.estadistica">
+<span id="data-estadistica-module"></span><h2>data.estadistica module<a class="headerlink" href="#module-data.estadistica" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="data.estadistica.estadistica">
+<span class="sig-prename descclassname"><span class="pre">data.estadistica.</span></span><span class="sig-name descname"><span class="pre">estadistica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.estadistica.estadistica" title="Link to this definition">¶</a></dt>
+<dd><p>Función que estructura y dirige la creación de una serie de data frames
+a partir de un archivo excel con información de la BBDD.
+Crea otron archivo excel que consta de dos hojas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>La primera muestra de forma clara, visual y formateada los datos de entrada</p></li>
+</ul>
+<p>procesados
+- La segunda muestra, también de forma clara y formateada una serie de datos 
+estadísticos obtenidos a partir de los datos de entrada. Por un lado muestra datos
+relevantes comercialmente, ya que reflejan qué productos resultan más rentables para 
+la correduría. Y por otro, resalta de manera visual las discrepancias entre la 
+información obtenida a partir de los datos de los recibos y la introducida manualmente 
+en Elevia referente a las comisiones de los productos</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="module-data.out">
+<span id="data-out-module"></span><h2>data.out module<a class="headerlink" href="#module-data.out" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="data.out.exportar_datos">
+<span class="sig-prename descclassname"><span class="pre">data.out.</span></span><span class="sig-name descname"><span class="pre">exportar_datos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoja</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.out.exportar_datos" title="Link to this definition">¶</a></dt>
+<dd><p>Exporta el data frame que contiene la información de los recibos a procesar
+a un archivo excel y le da un formato adecuado para su correcta visualización
+Toma como parametros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df: data frame a exportar</p></li>
+<li><p>writer: el objeto del módulo xlsxwriter creado para dar formato a un excel</p></li>
+</ul>
+<p>desde Python
+- hoja: una cadena que da nombre a la hoja creada en el archivo excel</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.out.exportar_estadistica">
+<span class="sig-prename descclassname"><span class="pre">data.out.</span></span><span class="sig-name descname"><span class="pre">exportar_estadistica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoja</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.out.exportar_estadistica" title="Link to this definition">¶</a></dt>
+<dd><p>Exporta el data frame que contiene los datos estadísticos calculados
+a un archivo excel y le da un formato adecuado para su correcta visualización
+Toma como parametros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>df1, df2, df3: data frames a exportar que conforman la hoja excel obtenida</p></li>
+<li><p>writer: el objeto del módulo xlsxwriter creado para dar formato a un excel</p></li>
+</ul>
+<p>desde Python
+- hoja: una cadena que da nombre a la hoja creada en el archivo excel</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.out.get_df_estadistica">
+<span class="sig-prename descclassname"><span class="pre">data.out.</span></span><span class="sig-name descname"><span class="pre">get_df_estadistica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.out.get_df_estadistica" title="Link to this definition">¶</a></dt>
+<dd><p>Construye el data frame todos con los datos estadisticos
+relevantes
+Toma como parametro el dat frame de los datos y la lista de tuplas con
+la informacion de los productos</p>
+</dd></dl>
+
+</section>
+<section id="module-data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-data" title="Link to this heading">¶</a></h2>
+<p>Data es un paquete que crea dataframes y otros objetos necesario para el cálculo de algunos datos estadísticos tomando como muestra 
+los datos registrados en los recibos de la BBDD, expone los datos y sus desviaciones, resalta discrepancias llamativas y los exporta 
+en formato excel.
+Consta de tres modulos:
+- build: conjunto de funciones necesarias para la creacion de los data frame y los campos que aportan información y permiten parametrizar 
+- estadística: contiene la función que estructura  la creación de esos data frame y sus campos
+- out: conjunto de funciones necesarias para exportar los data frame a formato excel y darle formato para una visualización mas clara</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Claimer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">claimer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="claim.html">claim module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errores.html">errores package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getter.html">getter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inter.html">inter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reclamacion.html">reclamacion package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">claimer</a><ul>
+      <li>Previous: <a href="claim.html" title="previous chapter">claim module</a></li>
+      <li>Next: <a href="errores.html" title="next chapter">errores package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Paula R. Castro.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
