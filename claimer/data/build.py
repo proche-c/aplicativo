@@ -15,31 +15,18 @@ def create_df_est(path):
     a analizar
     """
     df_i = pd.read_excel(path, header=1)
+    
     df = df_i[['Poliza.Compania.Alias', 'Producto', 'Prima neta', 'Comisión prima neta', 
-        'Comisión correduría', 'Poliza.Producto.Com1', 'Poliza.Producto.Com2', 
-        'Poliza.Producto.Com3', 'Poliza.Producto.Com4', 'Poliza.Producto.Com5']]
-    col = ['Compañía', 'Producto', 'Prima neta', 'Com. prima neta', 'Com. correduría', 
-        'Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']
-    df.columns = col
-    for i in range(len(df)):
-        try:
-            df['Prima neta'][i] = float(df['Prima neta'][i])
-        except ValueError:
-            df['Prima neta'][i] = 0
-        try:
-            df['Com. prima neta'][i] = float(df['Com. prima neta'][i])
-        except ValueError:
-            df['Com. prima neta'][i] = 0
-        try:
-            df['Com. correduría'][i] = float(df['Com. correduría'][i])
-        except ValueError:
-            df['Com. correduría'][i] = 0
-    df['Prima neta'] = df['Prima neta'].astype(float)
-    df['Com. prima neta'] = df['Com. prima neta'].astype(float)
-    df['Com. correduría'] = df['Com. correduría'].astype(float)
-    df['Prima neta'].fillna(0)
-    df['Com. prima neta'].fillna(0)
-    df['Com. correduría'].fillna(0)
+               'Comisión correduría', 'Poliza.Producto.Com1', 'Poliza.Producto.Com2', 
+               'Poliza.Producto.Com3', 'Poliza.Producto.Com4', 'Poliza.Producto.Com5']].copy()
+    
+    df.columns = ['Compañía', 'Producto', 'Prima neta', 'Com. prima neta', 'Com. correduría',
+                  'Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']
+
+    # Convertimos columnas numéricas con errores a 0 si no se pueden convertir
+    for col in ['Prima neta', 'Com. prima neta', 'Com. correduría']:
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0.0)
+
     return df
 
 
@@ -49,17 +36,10 @@ def create_list_prod(df):
     Toma los datos del archivo a analizar y elimina los duplicados
     toma como parametro el data frame creado y devuelve una lista de tuplas
     """
-    l = []
-    for i in range(len(df)):
-        t = (df['Compañía'][i], df['Producto'][i], df['Com. año 1'][i], df['Com. año 2'][i], 
-            df['Com. año 3'][i], df['Com. año 4'][i], df['Com. año 5'][i])
-        l.append(t)
-    l2 = []
-    l2 = list(set(l))
-    list_prod = []
-    for i in range(len(l2)):
-        t2 = (i, l2[i][0], l2[i][1], l2[i][2], l2[i][3], l2[i][4], l2[i][5], l2[i][6])
-        list_prod.append(t2)
+    cols = ['Compañía', 'Producto', 'Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']
+    df_unique = df[cols].drop_duplicates().reset_index(drop=True)
+    df_unique.insert(0, 'indice', df_unique.index)
+    list_prod = list(df_unique.itertuples(index=False, name=None))
     return list_prod
 
 def find_indice(list_prod, cia, prod, com1, com2, com3, com4, com5):
@@ -70,12 +50,10 @@ def find_indice(list_prod, cia, prod, com1, com2, com3, com4, com5):
         - list_prod: la lista de productos sin duplicados
         - Los datos de producto de cada registro del data frame
     """
-    for i in range(len(list_prod)):
-        if (list_prod[i][1] == cia and list_prod[i][2] == prod and list_prod[i][3] == com1 
-        and list_prod[i][4] == com2 and list_prod[i][5] == com3 and 
-        list_prod[i][6] == com4 and list_prod[i][7] == com5):
-            break
-    return list_prod[i]
+    for tup in list_prod:
+        if tup[1:] == (cia, prod, com1, com2, com3, com4, com5):
+            return tup
+    return None
 
 
 def complete_df(list_prod, df):
@@ -88,15 +66,23 @@ def complete_df(list_prod, df):
     producto y el data frame
     """
     df['indice'] = -1
-    df['Com. prima neta %'] = 0.00
-    df['Com. correduría %'] = 0.00
-    df['Sobrecomisión %'] = 0.00
-    for i in range(len(df)):
-        tup = find_indice(list_prod, df['Compañía'][i], df['Producto'][i], df['Com. año 1'][i], 
-            df['Com. año 2'][i], df['Com. año 3'][i], df['Com. año 4'][i], df['Com. año 5'][i]              )
-        df['indice'][i] = tup[0]
-        if df['Prima neta'][i] != 0:
-            df['Com. prima neta %'][i] = (df['Com. prima neta'][i] / df['Prima neta'][i]).astype(float)
-            df['Com. correduría %'][i] = (df['Com. correduría'][i] / df['Prima neta'][i])
-            df['Sobrecomisión %'][i] = df['Com. correduría %'][i] - df['Com. prima neta %'][i]
+
+    df_map = pd.DataFrame(list_prod, columns=['indice', 'Compañía', 'Producto', 
+                                               'Com. año 1', 'Com. año 2', 'Com. año 3', 
+                                               'Com. año 4', 'Com. año 5'])
+
+    df = df.merge(df_map, on=['Compañía', 'Producto', 'Com. año 1', 'Com. año 2', 
+                              'Com. año 3', 'Com. año 4', 'Com. año 5'], how='left', suffixes=('', '_map'))
+
+    # Renombra correctamente y elimina el antiguo
+    if 'indice_map' in df.columns:
+        df.drop(columns=['indice'], inplace=True)
+        df.rename(columns={'indice_map': 'indice'}, inplace=True)
+
+    # Calcula los porcentajes
+    df['Com. prima neta %'] = (df['Com. prima neta'] / df['Prima neta']).fillna(0)
+    df['Com. correduría %'] = (df['Com. correduría'] / df['Prima neta']).fillna(0)
+    df['Sobrecomisión %'] = df['Com. correduría %'] - df['Com. prima neta %']
+
+    return df
 

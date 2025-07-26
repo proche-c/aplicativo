@@ -7,50 +7,54 @@ import pandas as pd
 
 def build_cosesa(df, cosesa):
     """
-    Construye una lista anidada con los recibos de cosesa y las com a las que se reclamó..
+    Devuelve una lista anidada con los recibos de cosesa y las com a las que se reclamó..
     Parámetro df: es un data frame que se construye a partir de un hoja excel que
     contiene los datos de los recibos reclamados
     Parámetro cosesa: Es una lista anidada vacía. Es el valor que se devuelve
     """
-    df['null'] = pd.isna(df['RECIBO2'])
-    length = len(df['RECIBO'])
-    item = []
-    for i in range(length):
-        item = [df['RECIBO'][i], df['COMISION'][i]]
-        cosesa.append(item)
-    length = len(df['RECIBO2'])
-    for i in range(length):
-        if df['null'][i] == False:
-            item = [df['RECIBO2'][i], df['COMISION'][i]]
-            cosesa.append(item)
+    df['null'] = df['RECIBO2'].isna()
+
+    # Para RECIBO, tomamos todas las filas (aunque COMISION pueda ser NaN)
+    cosesa_main = df[['RECIBO', 'COMISION']].copy()
+    # Reemplazamos NaN en COMISION por 0 para replicar comportamiento sin vectorizar
+    cosesa_main['COMISION'] = cosesa_main['COMISION'].fillna(0)
+    cosesa_main_list = cosesa_main.values.tolist()
+
+
+    # Para RECIBO2 solo donde no es nulo, y tomamos COMISION igual con NaN a 0
+    cosesa_secondary = df.loc[~df['null'], ['RECIBO2', 'COMISION']].copy()
+    cosesa_secondary['COMISION'] = cosesa_secondary['COMISION'].fillna(0)
+    cosesa_secondary_list = cosesa_secondary.values.tolist()
+
+
+    # Unir ambas listas
+    cosesa[:] = cosesa_main_list + cosesa_secondary_list
+
     return cosesa
-
-
-def is_cosesa(df_num_rec, cosesa):
-    """
-    Determina si es un recibo que por ser de cosesa ya se ha reclamado.
-    Busca cada recibo del data frame en la lista anidada cosesa
-    Valores de retorno: 0 si no se ha reclamado; comision reclamada si se ha hecho
-    """
-    for i in range(len(cosesa)):
-        if (df_num_rec == cosesa[i][0]):
-            return cosesa[i][1]
-    return 0
 
 
 def add_is_cosesa(df, cosesa):
     """
-    Añade la columna que determina si ya se ha reclamado como cosesa y que cantidad
-    Crea en el data frame de recibos los campos:
-    is_cosesa: 1 si está reclamado; 0 si no lo está
-    com. cosesa: comisión reclamada si se ha reclamado; 0 si no
+    Añade columnas indicando si un recibo ya fue reclamado a Cosesa y su comisión.
     """
-    df['is cosesa'] = 0
-    df['com. cosesa'] = 0.00
-    for i in range(len(df)):
-        com_c = is_cosesa(df['Num. recibo'][i], cosesa)
-        if com_c > 0:
-            df['is cosesa'][i] = 1
-            df['com. cosesa'][i] = com_c
+    cosesa_df = pd.DataFrame(cosesa, columns=['Num. recibo', 'com. cosesa'])
+
+
+    # Convertir a entero para eliminar decimales .0 y luego a string
+    cosesa_df['Num. recibo'] = cosesa_df['Num. recibo'].astype(int).astype(str).str.strip()
+    cosesa_df['com. cosesa'] = pd.to_numeric(cosesa_df['com. cosesa'], errors='coerce').fillna(0)
+
+    df['Num. recibo'] = df['Num. recibo'].astype(str).str.strip()
+
+    dup_count = cosesa_df['Num. recibo'].duplicated().sum()
+
+    df = df.merge(cosesa_df, on='Num. recibo', how='left')
+
+    df['com. cosesa'] = df['com. cosesa'].fillna(0.00)
+    df['is cosesa'] = (df['com. cosesa'] > 0).astype(int)
+
     return df
+
+
+
 

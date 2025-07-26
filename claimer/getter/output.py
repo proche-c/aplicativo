@@ -39,14 +39,14 @@ def get_dif(df_recibos, anomaly):
         póliza emitida con clave cosesa y cuyo recibo ya fue reclamado; 2, si se ha 
         pactado una comisión reducida en esa póliza
     """
-    df_recibos['Diferencia'] = 0.00
-    for i in range(len(df_recibos)):
-        if anomaly == 0:
-            df_recibos['Diferencia'][i] = df_recibos['com_teorica'][i] - df_recibos['Comisión correduría'][i]
-        elif anomaly == 1:
-            df_recibos['Diferencia'][i] = df_recibos['com_teorica'][i] - df_recibos['com. cosesa'][i] * df_recibos['Prima neta'][i]
-        elif anomaly == 2:
-            df_recibos['Diferencia'][i] = df_recibos['com_teorica'][i] * df_recibos['com. red'][i] - df_recibos['Comisión correduría'][i]
+    if anomaly == 0:
+        df_recibos['Diferencia'] = df_recibos['com_teorica'] - df_recibos['Comisión correduría']
+    elif anomaly == 1:
+        df_recibos['Diferencia'] = df_recibos['com_teorica'] - (df_recibos['com. cosesa'] * df_recibos['Prima neta'])
+    elif anomaly == 2:
+        df_recibos['Diferencia'] = (df_recibos['com_teorica'] * df_recibos['com. red']) - df_recibos['Comisión correduría']
+    else:
+        df_recibos['Diferencia'] = 0.0  # en caso de valor no esperado
 
 
 def save_r_1(dfs):

@@ -2,60 +2,60 @@ import pandas as pd
 from xlsxwriter import *
 
 
-def get_df_estadistica(df, list):
+def get_df_estadistica(df, list_prod):
     """
-    Construye el data frame todos con los datos estadisticos
-    relevantes
-    Toma como parametro el dat frame de los datos y la lista de tuplas con
-    la informacion de los productos
+    Construye los data frames con los datos estadísticos relevantes.
+    Recibe:
+        - df: el DataFrame con los datos ya procesados (con columna 'indice')
+        - list_prod: lista de tuplas con la información de los productos
+    Devuelve:
+        - df1: DataFrame con índice, compañía y producto
+        - df2: Estadísticas agrupadas por índice, con columnas seleccionadas
+        - df3: Información de comisiones por año y detección de discrepancias
     """
-    # Toma los datos necesarios de df_datos
-    df_e = df[['indice', 'Prima neta', 'Com. prima neta', 'Com. correduría', 'Com. prima neta %', 
-        'Com. correduría %', 'Sobrecomisión %']]
 
-    # Crea un data frame con la información de los productos
-    dfp = pd.DataFrame(list, columns= ['ind', 'Compañía', 'Producto', 'Com. año 1', 
-        'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5'])
-    df1 = dfp[['ind', 'Compañía', 'Producto']]
+    # Subconjunto con las columnas relevantes
+    df_e = df[['indice', 'Prima neta', 'Com. prima neta', 'Com. correduría',
+               'Com. prima neta %', 'Com. correduría %', 'Sobrecomisión %']]
 
-    # Crea otro data frame con los datos estadisticos y elimina los campos innecesarios
-    df2 = df_e.groupby('indice').describe()
-    df2.drop(('Prima neta', 'std') , axis=1, inplace=True)
-    df2.drop(('Prima neta', '25%') , axis=1, inplace=True)
-    df2.drop(('Prima neta', '50%') , axis=1, inplace=True)
-    df2.drop(('Prima neta', '75%') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta', 'count') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta', 'std') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta', '25%') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta', '50%') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta', '75%') , axis=1, inplace=True)
-    df2.drop(('Com. correduría', 'count') , axis=1, inplace=True)
-    df2.drop(('Com. correduría', 'std') , axis=1, inplace=True)
-    df2.drop(('Com. correduría', '25%') , axis=1, inplace=True)
-    df2.drop(('Com. correduría', '50%') , axis=1, inplace=True)
-    df2.drop(('Com. correduría', '75%') , axis=1, inplace=True)
-    df2.drop(('Com. prima neta %', 'count') , axis=1, inplace=True)
-    df2.drop(('Com. correduría %', 'count') , axis=1, inplace=True)
-    df2.drop(('Sobrecomisión %', 'count') , axis=1, inplace=True)
-    df2.drop(('Sobrecomisión %', 'std') , axis=1, inplace=True)
-    df2.drop(('Sobrecomisión %', '25%') , axis=1, inplace=True)
-    df2.drop(('Sobrecomisión %', '50%') , axis=1, inplace=True)
-    df2.drop(('Sobrecomisión %', '75%') , axis=1, inplace=True)
+    # Crear DataFrame de productos
+    dfp = pd.DataFrame(list_prod, columns=[
+        'ind', 'Compañía', 'Producto', 'Com. año 1', 'Com. año 2',
+        'Com. año 3', 'Com. año 4', 'Com. año 5'
+    ])
+    df1 = dfp[['ind', 'Compañía', 'Producto']].copy()
 
-    # Crea otro data frame con la información de las comisiones de producto
-    df3 = dfp[['Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']]
-    # Calcula un parametro que determina si hay discrepancia entre la información
-    # de la BBDD y los datos registrados en los recibos
-    df3['Discrepancy'] = "NO"
-    for i in range(len(df3)):
-        mean = (df3['Com. año 1'][i] + df3['Com. año 2'][i] + df3['Com. año 3'][i]
-                 + df3['Com. año 4'][i] + df3['Com. año 5'][i]) / 5
-        if (df3['Com. año 1'][i] < 0.001 and  df3['Com. año 2'][i] < 0.001 and df3['Com. año 3'][i] < 0.001 
-        and df3['Com. año 4'][i] < 0.001 and df3['Com. año 5'][i] < 0.001):
-            df3['Discrepancy'][i] = "YES"
-        elif abs(df2['Com. prima neta %', 'mean'][i] - mean) > 0.06:
-            df3['Discrepancy'][i] = "YES"
+    # Agrupamos y seleccionamos solo estadísticas relevantes
+    df2 = df_e.groupby('indice').agg({
+        'Prima neta': ['mean', 'min', 'max'],
+        'Com. prima neta': ['mean', 'min', 'max'],
+        'Com. correduría': ['mean', 'min', 'max'],
+        'Com. prima neta %': ['mean'],
+        'Com. correduría %': ['mean'],
+        'Sobrecomisión %': ['mean', 'min', 'max']
+    })
+
+    # Preparar df3 con las comisiones por año
+    df3 = dfp[['Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']].copy()
+
+    # Calculamos la media de las comisiones esperadas por fila
+    df3['mean_product'] = df3.mean(axis=1)
+
+    # Detectar discrepancias
+    all_zeros = (df3[['Com. año 1', 'Com. año 2', 'Com. año 3', 'Com. año 4', 'Com. año 5']] < 0.001).all(axis=1)
+
+    # Alineamos los valores de la media real por índice del producto
+    com_real_mean = df2[('Com. prima neta %', 'mean')].reset_index(drop=True)
+
+    # Creamos la columna 'Discrepancy'
+    df3['Discrepancy'] = 'NO'
+    df3.loc[all_zeros | (abs(com_real_mean - df3['mean_product']) > 0.06), 'Discrepancy'] = 'YES'
+
+    # Eliminamos la columna auxiliar
+    df3.drop(columns='mean_product', inplace=True)
+
     return df1, df2, df3
+
 
 
 def exportar_datos(df, writer, hoja):

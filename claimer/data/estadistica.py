@@ -51,7 +51,7 @@ def estadistica(path, root):
     comp = 0
     if prod == 1:
         try:
-            complete_df(list_prod, df)  # Cálcula los campos que se añaden al data frame
+            df = complete_df(list_prod, df)  # Cálcula los campos que se añaden al data frame
         except Exception as e:
             tipo = type(e).__name__
             print("Error 42: " + tipo)

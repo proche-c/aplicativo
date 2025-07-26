@@ -77,7 +77,7 @@ def reclamar_all(path, path_cosesa, desv, referencia, root):
     claim = 0
     if lista == 1:
         try:
-            add_is_cosesa(df, cosesa) # Añado informacion al df ppal
+            df = add_is_cosesa(df, cosesa) # Añado informacion al df ppal
         except Exception as e:
             tipo = type(e).__name__
             print("Error 24: " + tipo)
@@ -90,46 +90,29 @@ def reclamar_all(path, path_cosesa, desv, referencia, root):
     val = 0
     if claim == 1:
         try:
-            for i in range(len(df)):
-                try:
-                    df['Prima neta'][i] = float(df['Prima neta'][i])
-                except ValueError:
-                    df['Prima neta'][i] = 0
-                try:
-                    df['Comisión prima neta'][i] = float(df['Comisión prima neta'][i])
-                except ValueError:
-                    df['Comisión prima neta'][i] = 0
-                try:
-                    df['Comisión correduría'][i] = float(df['Comisión correduría'][i])
-                except ValueError:
-                    df['Comisión correduría'][i] = 0
-            df['Prima neta'] = df['Prima neta'].astype(float)
-            df['Comisión prima neta'] = df['Comisión prima neta'].astype(float)
-            df['Comisión correduría'] = df['Comisión correduría'].astype(float)
-            df['Prima neta'].fillna(0)
-            df['Comisión prima neta'].fillna(0)
-            df['Comisión correduría'].fillna(0)
+            cols = ['Prima neta', 'Comisión prima neta', 'Comisión correduría']
+            for col in cols:
+                df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+            val = 1
         except Exception as e:
             tipo = type(e).__name__
             print("Error 25: " + tipo)
             e_25 = Error(tipo, "25")
             msg = "Error 25: " + tipo + ": " + e_25.msg_1 + e_25.msg_2
             messagebox.showinfo(message=msg, title="Warning", parent=root)
-        else:
-            val = 1
 
-    fracc = 0
-    if val == 1:
-        try:
-            get_prima_fraccionada(df)
-        except Exception as e:
-            tipo = type(e).__name__
-            print("Error 26: " + tipo)
-            e_26 = Error(tipo, "26")
-            msg = "Error 26: " + tipo + ": " + e_26.msg_1 + e_26.msg_2
-            messagebox.showinfo(message=msg, title="Warning", parent=root)
-        else:
-            fracc = 1
+        fracc = 0
+        if val == 1:
+            try:
+                get_prima_fraccionada(df)
+            except Exception as e:
+                tipo = type(e).__name__
+                print("Error 26: " + tipo)
+                e_26 = Error(tipo, "26")
+                msg = "Error 26: " + tipo + ": " + e_26.msg_1 + e_26.msg_2
+                messagebox.showinfo(message=msg, title="Warning", parent=root)
+            else:
+                fracc = 1
 
     length = [] # Creo una lista para guardar las length
     zmp = 0

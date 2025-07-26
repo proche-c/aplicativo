@@ -11,21 +11,14 @@ def get_prima_fraccionada(df):
     """
     df['is_fraccionada'] = 0
     df['is_fraccionada_zurich'] = 0
-    for i in range(len(df)):
-        if df['Poliza.FormaPago'][i] ==  "Mensual":
-            df['is_fraccionada'][i] = 1
-            if (df['Poliza.Compania.Alias'][i] == "ZURICH" or df['Poliza.Compania.Alias'][i] == "ZURICH VIDA" or df['Poliza.Compania.Alias'][i] == "ZURICHVIDA"):
-                df['Prima neta'][i] = 0.94 * df['Prima neta'][i]
-                df['is_fraccionada_zurich'][i] = 1
-        elif df['Poliza.FormaPago'][i] ==  "Trimestral":
-            df['is_fraccionada'][i] = 1
-            if (df['Poliza.Compania.Alias'][i] == "ZURICH" or df['Poliza.Compania.Alias'][i] == "ZURICH VIDA" or df['Poliza.Compania.Alias'][i] == "ZURICHVIDA"):
-                df['Prima neta'][i] = 0.96 * df['Prima neta'][i]
-                df['is_fraccionada_zurich'][i] = 1
-        elif df['Poliza.FormaPago'][i] ==  "Semestral":
-            df['is_fraccionada'][i] = 1
-            if (df['Poliza.Compania.Alias'][i] == "ZURICH" or df['Poliza.Compania.Alias'][i] == "ZURICH VIDA" or df['Poliza.Compania.Alias'][i] == "ZURICHVIDA"):
-                df['Prima neta'][i] = 0.98 * df['Prima neta'][i]
-                df['is_fraccionada_zurich'][i] = 1
-        elif df['Poliza.FormaPago'][i] ==  "Bimestral" or df['Poliza.FormaPago'][i] ==  "Cuatrimestral":
-                df['is_fraccionada'][i] = 1
+
+    formas_fraccionadas = ["Mensual", "Trimestral", "Semestral", "Bimestral", "Cuatrimestral"]
+    df['is_fraccionada'] = df['Poliza.FormaPago'].isin(formas_fraccionadas).astype(int)
+
+    es_zurich = df['Poliza.Compania.Alias'].isin(["ZURICH", "ZURICH VIDA", "ZURICHVIDA"])
+
+    df.loc[es_zurich & (df['Poliza.FormaPago'] == "Mensual"), 'Prima neta'] *= 0.94
+    df.loc[es_zurich & (df['Poliza.FormaPago'] == "Trimestral"), 'Prima neta'] *= 0.96
+    df.loc[es_zurich & (df['Poliza.FormaPago'] == "Semestral"), 'Prima neta'] *= 0.98
+
+    df.loc[es_zurich & df['Poliza.FormaPago'].isin(["Mensual", "Trimestral", "Semestral"]), 'is_fraccionada_zurich'] = 1
