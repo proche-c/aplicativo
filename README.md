@@ -18,7 +18,16 @@ In this business context, insurance policyholders pay premiums to insurance comp
 4. **Generates three Excel reports:**
    - ✅ **Correct Receipts Report**: Lists receipts where the brokerage received the expected commission.  
    - ⚠️ **Receipts to Review Report**: Lists receipts where the brokerage received a **lower commission than expected**, based on theoretical values in the database.
-   - 📊 **Statistical Summary Report**: Provides aggregate statistics per product, comparing the average commission actually received with the theoretical commission in the database. Products with a significant deviation are highlighted, helping the company **detect errors or outdated data in their commission records**.  
+   - 📊 **Statistical Summary Report**: Provides aggregate statistics per product, comparing the average commission actually received with the theoretical commission in the database. Products with a significant deviation are highlighted, helping the company **detect errors or outdated data in their commission records**.
+
+## Data Science Aspects  
+
+This project showcases multiple data science and analytics capabilities:  
+- 🧹 Data Cleaning & Preprocessing: Handling missing, incomplete, and erroneous data from real-world sources.
+- 🔀 Data Integration: Merging and aligning data from different systems (receipts vs. internal commission tables).
+- 📈 Descriptive Statistics & Outlier Detection: Computing and comparing average commissions, highlighting products with significant anomalies.
+- 📊 Automated Reporting: Producing detailed Excel files for operational decision-making and auditing.
+- 🧠 Decision Support: Helping the brokerage prioritize database corrections and detect systemic issues in commission payments.  
 
 ## Requirements 
 
