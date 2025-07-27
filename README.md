@@ -40,7 +40,20 @@ Dependencies are managed using pipenv, and the environment is automatically set 
 To install the environment and all required packages: 
 
 ```bash
-$ cd 
+$ git clone git@github.com:proche-c/aplicativo.git
+$ cd claimer
+$ bash ./install.sh
+```
+
+This script:
+
+- Verifies that python3.11 is installed and available in the system.
+- Installs pipenv (if needed).
+- Creates a virtual environment using Python 3.11.
+- Installs all dependencies listed in the Pipfile.
+
+If python3.11 is not installed on your system, please install it first:
+- macOS: Download from <python.org>
 
 ## Instructions
 
