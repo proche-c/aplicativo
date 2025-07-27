@@ -97,8 +97,8 @@ This application provides a graphical interface to load input files and process 
 
 	The following Excel reports are generated:
 
-		1. Discrepancies Report
-		Receipts in which the paid commission is lower than the theoretical commission in the database (even if that theoretical commission may be outdated or incomplete).
+	1. **Discrepancies Report**
+	Receipts in which the paid commission is lower than the theoretical commission in the database (even if that theoretical commission may be outdated or incomplete).
    
       
 
