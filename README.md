@@ -53,7 +53,7 @@ This script:
 - Installs all dependencies listed in the Pipfile.
 
 If python3.11 is not installed on your system, please install it first:
-- macOS: Download from <python.org>
+- [macOS: Download from python.org](https://www.python.org/downloads/mac-osx/)
 
 ## Instructions
 
