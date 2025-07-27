@@ -35,6 +35,13 @@ This project is written in Python 3.11 and uses a graphical interface built with
 
 > ⚠️ Important: Although tkinter is part of the Python standard library, in newer Python versions (e.g., 3.13), it may not work correctly on some systems (especially macOS and Linux) due to missing GUI support or compatibility issues. Therefore, this project explicitly requires Python 3.11, where it has been tested and verified to work.
 
+Dependencies are managed using pipenv, and the environment is automatically set up by running the provided script.
+
+To install the environment and all required packages: 
+
+```bash
+$ cd 
+
 ## Instructions
 
 ### 1.Cloning the repositories  
