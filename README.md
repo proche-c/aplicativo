@@ -40,9 +40,9 @@ Dependencies are managed using pipenv, and the environment is automatically set 
 To install the environment and all required packages: 
 
 ```bash
-$ git clone git@github.com:proche-c/aplicativo.git
-$ cd claimer
-$ bash ./install.sh
+git clone git@github.com:proche-c/aplicativo.git
+cd claimer
+bash ./install.sh
 ```
 
 This script:
@@ -55,23 +55,20 @@ This script:
 If python3.11 is not installed on your system, please install it first:
 - macOS: [Download from python.org](https://www.python.org/downloads/mac-osx/)
 - Ubuntu/Debian:
+
   ```bash
-  $ sudo apt install python3.11
+  sudo apt install python3.11
   ```
 - Windows:[Download installer](https://www.python.org/downloads/windows/)
 
+After the installation, you can run the application with:  
+
+```bash
+pipenv run python claim.py
+``` 
+
 ## Instructions
 
-### 1.Cloning the repositories  
-```shell
-$ git clone https://github.com/castrogr/aplicativo.git
-```
-### 2.Executing  
-```shell
-$ cd claimer_source_code
-$ python3 claim.py
-```
-### 3. Tester. 
 The app will ask you to open the files to process. <br>
 	1. "Abra el archivo excel a evaluar": use testfile.xlsx <br>
  	2. "Cargue el archivo de los recibos reclamados de Cosesa": use testcosesa.xlsx
@@ -79,4 +76,3 @@ The app will ask you to open the files to process. <br>
 Once processed, you can save the results files, one contains the statistic data with the marked discrepancies, another contains the recietps in wich the commission paid is lower that the agreed and the amount to claim. And the last one contains the reciepts that were paid according to agreed commission
 
 
-NOTE: The application and the Documentation are in spanish as the client was spanish, I will update the documentation in english soon
