@@ -31,7 +31,9 @@ This project showcases multiple data science and analytics capabilities:
 
 ## Requirements 
 
-This project is written in Python language and thus needs the Python3 interpreter. It also uses the following modules: Pandas, requests, XlsxWriter and openpylx
+This project is written in Python 3.11 and uses a graphical interface built with **tkinter**.  
+
+> ⚠️ Important: Although tkinter is part of the Python standard library, in newer Python versions (e.g., 3.13), it may not work correctly on some systems (especially macOS and Linux) due to missing GUI support or compatibility issues. Therefore, this project explicitly requires Python 3.11, where it has been tested and verified to work.
 
 ## Instructions
 
