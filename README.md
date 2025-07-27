@@ -97,8 +97,12 @@ This application provides a graphical interface to load input files and process 
 
 	The following Excel reports are generated:
 
-	- **Discrepancies Report**
+	- **Discrepancies Report**  
 	Receipts in which the paid commission is lower than the theoretical commission in the database (even if that theoretical commission may be outdated or incomplete).
+	- **Valid Receipts Report**  
+	Receipts that were correctly paid according to the theoretical commission.
+	- **Statistical Summary Report**  
+	A summary showing the average paid commission per product, comparing it to the theoretical commission stored in the database. Products with significant deviations are highlighted to help the company review and 	update incorrect commission data.
    
       
 
